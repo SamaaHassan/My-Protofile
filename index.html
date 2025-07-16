@@ -5,8 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Protofile</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+    <div class="container">
+        <!-- 1.Header Section  -->
+         <header id="header">
+            <section class="hd__sect" id="hd__sect01">
+                <div class="logo-area">
+                    <img src="./images/Screenshot 2025-07-13 143951.png" alt="My Logo" class="logo-img">
+                    <span class="logo-name">Samaa | Web Creator</span>
+                </div>
+            </section>
+            <section class="hd__sect" id="hd__sect02">
+               <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+               </nav>
+            </section>
+            <section class="hd__sect" id="hd__sect03">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </section>
+         </header>
+         <!-- Main Section -->
+        <main id="main">
+            <section id="home" data-aos="fade-up">
+                <h1>Hello, I'm <span>Samaa</span></h1>
+                <p>A passionate beginner in web development, turning code into creativity.</p>
+                <a href="#projects" class="btn">Explore My Work</a>
+            </section>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>
+                    I'm <strong>Samaa Hassan</strong>, a front-end developer in the making, passionate about crafting clean,
+                    accessible, and engaging web experiences.
+                    With a strong eye for design and a growing command of modern web technologies, I'm committed to building
+                    intuitive interfaces that connect people with ideas.
+                </p>
+        
+                <p>
+                    My journey may be at its early stages, but my dedication to learning, experimenting, and evolving grows with
+                    every line of code I write.
+                </p>
+            </section>
+            <section id="projects">
+                <h2>My projects</h2>
+                <p>
+                    I'm currently working on my first real-world web project.
+                    I can’t wait to showcase the results as I continue to grow and build.
+                </p>
+                <p>
+                    My focus is on learning by doing — and every section of this site is a part of that journey.
+                </p>
+                <p class="projects-text">
+                    Stay tuned for a project that reflects my journey, growth, and passion for the web.
+                </p>
+            </section>
+            <section id="services">
+                <h2>My Services</h2>
+                <p>
+                    Soon, I’ll start offering web services like landing page creation, portfolio design, and basic website
+                    setup.
+                    For now, I’m focusing on learning and practicing every day.
+                </p>
+            </section>
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>If you'd like to connect, collaborate, or just say hello, feel free to reach out:</p>
+                <ul class="contact-links">
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/201013452185" target="_blank">Whatsapp</a>
+                    </li>
+                    <li>
+                        📧<a href="mailto:samahasan680@gmail.com" target="_blank">Email</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/samaahassan" target="_blank">Github</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+         <aside id="aside"></aside>
+         <!-- Footer Section -->
+            <footer id="footer">
+                <div class="footer-content">
+                    <p>© 2025 Samaa Hassan. All rights reserved.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/samaahassan" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/201013452185" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:samahasan680@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="index.js"></script>
+
 </body>
 </html>
