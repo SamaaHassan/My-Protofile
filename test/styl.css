@@ -3,17 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --text-dark: #2c3e50; /* لون غامق للنصوص الأساسية */
-    --text-medium: #5a6a7c; /* لون متوسط للنصوص الفرعية */
-    --accent-color: #d35400; /* لون مميز للعناصر التفاعلية زي الروابط عند الهوفر */
-    --glass-bg-light: rgba(255, 255, 255, 0.7); /* خلفية زجاجية فاتحة */
-    --glass-bg-medium: rgba(255, 255, 255, 0.5); /* خلفية زجاجية متوسطة */
-    --border-light: rgba(0, 0, 0, 0.15); /* حد فاتح */
-    --shadow-light: rgba(0, 0, 0, 0.1); /* ظل فاتح */
-}
 body {
-    background: linear-gradient(135deg, #e0b48c, #a07a50, #7a5c3e,  #4f3a2c);
+    /* background: linear-gradient(135deg, #a8c0ff, #3f2b96, #8e44ad, #5d2a80); */
+     background: linear-gradient(135deg, #e0b48c, #a07a50, #7a5c3e,  #4f3a2c);
     background-size: 400% 400%;
     animation: backgroundMove 20s ease infinite;
     font-family: 'Segoe UI', sans-serif;
@@ -32,12 +24,12 @@ body::-webkit-scrollbar{
     display: none;
 }
 .container{
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: var(--glass-bg-light);
+    background-color: rgba(255, 255, 255, 0.5);
     width: 100%;
     flex-grow: 1;
     /* min-height: 100vh; */
     backdrop-filter: blur(8px);
+    /* padding:  0 20px; */
     -webkit-backdrop-filter: blur(8px);
     position: relative;
     z-index: 1;
@@ -51,11 +43,9 @@ body::-webkit-scrollbar{
     width: 100%;
     height: 80px;
     /* background-color:rgba(255, 255, 255, 0.2); */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-    box-shadow: 0 4px 15px var(--shadow-light);
-    background-color: var(--glass-bg-medium);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     
 
 }
@@ -92,18 +82,16 @@ body::-webkit-scrollbar{
     gap:12px;
 }
 .logo-name{
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    letter-spacing: 0.8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.5px;
     white-space: nowrap;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) ;
-    padding: 8px 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) ;
+    padding: 6px 10px;
     /* border: 1px solid rgba(0, 0, 0, 0.1); */
-    border-radius: 15px;
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    background-color: var(--glass-bg-medium);
-    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
 
     font-family: 'segoe UI', sans-serif;
 }
@@ -119,31 +107,29 @@ body::-webkit-scrollbar{
 }
 .nav-menu ul li a {
     text-decoration: none;
-    color:var(--text-dark);
-    font-weight: 600;
-    transition: all 0.3s ease;
-    padding: 8px 15px;
-    background-color: var(--glass-bg-medium);
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 .nav-menu ul li a:hover {
-    color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: var(--accent-color);
-    transform: translateY(-2px);
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-color: rgba(0, 123, 255, 0.4);
 }
 .search-box{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border-light);
-    border-radius: 25px;
-    padding: 6px 12px;
-    background-color:var(--glass-bg-medium);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: #fff;
     transition: box-shadow 0.3s ease;
     background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 2px 10px var(--shadow-light);
 }
 .search-box:hover{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
@@ -152,7 +138,7 @@ body::-webkit-scrollbar{
     opacity: 0;
     width:0;
     border-radius: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     outline:none;
     padding: 5px 10px;
     font-size: 14px;
@@ -161,8 +147,7 @@ body::-webkit-scrollbar{
     right: 40px;
     background-color: #fff;
     z-index: -1;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--text-dark);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 .search-btn{
     border: none;
@@ -173,11 +158,9 @@ body::-webkit-scrollbar{
     padding: 8px;
     border-radius: 50%;
     transition: background 0.3s ease;
-    color: var(--text-dark);
 }
 .search-btn:hover{
-    background-color: var(--accent-color);
-    color: #fff;
+    background-color: rgba(0, 0 0, 0.5);
 }
 /* .search-box:hover .search-input, */
 .search-box.active .search-input{
@@ -194,35 +177,32 @@ main{
     margin: 0 auto;
 }
 .main-section-card {
-    background-color: var(--glass-bg-medium);
+    background-color: rgba(255, 255, 255, 0.03);
     /* خلفية بيضاء شفافة لتأثير الزجاج */
-    backdrop-filter: blur(15px);
+    /* backdrop-filter: blur(12px); */
     /* تطبيق تأثير الضباب (الزجاج الشفاف) */
-    -webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(12px);
     /* لدعم متصفح سفاري */
-    border-radius: 20px;
+    border-radius: 15px;
     /* حواف دائرية للبطاقة */
-    padding: 40px;
+    padding: 30px;
     /* مسافة داخلية للمحتوى داخل البطاقة */
     margin-bottom: 40px;
     /* مسافة بين كل بطاقة والتي تليها */
-    box-shadow: 0 8px 25px var(--shadow-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     /* ظل خفيف لإضافة عمق */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    min-height: calc(100vh - 250px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 3px solid var(--border-light);
+    border: 3px solid rgba(0, 0, 0, 0.2);
 
 }
 .main-section-card h2{
-    color: var(--text-medium);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    color: #333;
 }
 .main-section-card p{
     color: #444;
@@ -230,55 +210,25 @@ main{
 h1,h2{
     margin-bottom: 20px;
     font-weight: 700;
-    color: var(--text-dark);
 }
 p{
     line-height: 1.7;
     margin-bottom: 16px;
-    color: var(--text-medium);
 } 
 #home{
     margin-top: 40px;
-}
-.btn{
-    display: inline-block;
-    padding: 15px 30px ;
-    background-color: #d35400;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 30px;
-    border: 2px solid transparent;
-    cursor: pointer;
-}
-.btn:hover{
-    background-color: #e67e22;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-color: #fff;
-}
-.btn:active{
-    transform: translateY(0);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    background-color: #bf4d00;
 }
 footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #131212;
     text-align: center;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(5px); */
+    /* -webkit-backdrop-filter: blur(5px); */
     z-index: 998;
-    box-shadow: 0 -4px 10px var(--shadow-light);
-    padding: 15px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -289,8 +239,6 @@ footer {
 
 .footer-social {
   margin-top: 10px;
-  color: #e0e0e0;
-  font-size: 20px;
 }
 
 .footer-social a {
@@ -301,8 +249,7 @@ footer {
 }
 
 .footer-social a:hover {
-  color: #fff;
-  transform: translateY(-2px);
+  color: #00bfff;
 }
 
 @keyframes backgroundMove {
