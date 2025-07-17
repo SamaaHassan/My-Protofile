@@ -15,7 +15,7 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
-    duration: 1000,     // مدة الحركة بالمللي ثانية
+    duration: 1500,     // مدة الحركة بالمللي ثانية
     once: true          // الحركة بتحصل مرة واحدة بس عند الظهور
   });
 });

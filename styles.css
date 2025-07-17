@@ -6,21 +6,37 @@
 :root{
     --text-dark: #2c3e50; /* لون غامق للنصوص الأساسية */
     --text-medium: #5a6a7c; /* لون متوسط للنصوص الفرعية */
-    --accent-color: #d35400; /* لون مميز للعناصر التفاعلية زي الروابط عند الهوفر */
-    --glass-bg-light: rgba(255, 255, 255, 0.7); /* خلفية زجاجية فاتحة */
-    --glass-bg-medium: rgba(255, 255, 255, 0.5); /* خلفية زجاجية متوسطة */
+    --accent-color: #d35400; 
+    --glass-bg-light: rgba(255, 255, 255, 0.7);
+    --glass-bg-medium: rgba(255, 255, 255, 0.5); 
     --border-light: rgba(0, 0, 0, 0.15); /* حد فاتح */
     --shadow-light: rgba(0, 0, 0, 0.1); /* ظل فاتح */
 }
 body {
-    background: linear-gradient(135deg, #e0b48c, #a07a50, #7a5c3e,  #4f3a2c);
+    /* background: linear-gradient(135deg, #e0b48c, #a07a50, #7a5c3e,  #4f3a2c); */
+    background: url(/images/second-breakfast-Hh-LMsF28P0-unsplash.jpg) center center / cover no-repeat,
+    linear-gradient(135deg, #e0b48c, #a07a50, #7a5c3e, #4f3a2c);
     background-size: 400% 400%;
-    animation: backgroundMove 20s ease infinite;
+    background-position: 0% 50%;
+
+    animation: backgroundMove 200s ease infinite;
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
+    overflow-x: hidden;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* تعتيم خفيف جداً، يمكنك زيادة القيمة لـ 0.2 أو 0.3 حسب الحاجة */
+    z-index: -1; /* لجعلها تحت محتوى الـ body */
+    pointer-events: none; /* لضمان عدم اعتراض التفاعلات */
 }
 html,body{
      -ms-overflow-style: none; 
@@ -32,13 +48,13 @@ body::-webkit-scrollbar{
     display: none;
 }
 .container{
-    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(255, 255, 255, 0.2);
     background-color: var(--glass-bg-light);
     width: 100%;
     flex-grow: 1;
     /* min-height: 100vh; */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     position: relative;
     z-index: 1;
 }
@@ -50,12 +66,15 @@ body::-webkit-scrollbar{
     display: flex;
     width: 100%;
     height: 80px;
-    /* background-color:rgba(255, 255, 255, 0.2); */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-    box-shadow: 0 4px 15px var(--shadow-light);
+    background-color:rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 15px var(--shadow-light); */
     background-color: var(--glass-bg-medium);
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
     
 
 }
@@ -99,10 +118,10 @@ body::-webkit-scrollbar{
     white-space: nowrap;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) ;
     padding: 8px 15px;
-    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 15px;
-    /* background-color: rgba(255, 255, 255, 0.2); */
-    background-color: var(--glass-bg-medium);
+    background-color: rgba(255, 255, 255, 0.1);
+    /* background-color: var(--glass-bg-medium); */
     border: 1px solid var(--border-light);
 
     font-family: 'segoe UI', sans-serif;
@@ -123,9 +142,11 @@ body::-webkit-scrollbar{
     font-weight: 600;
     transition: all 0.3s ease;
     padding: 8px 15px;
-    background-color: var(--glass-bg-medium);
-    border: 1px solid var(--border-light);
+    /* background-color: var(--glass-bg-medium); */
+    /* border: 1px solid var(--border-light); */
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 .nav-menu ul li a:hover {
     color: var(--accent-color);
@@ -194,11 +215,11 @@ main{
     margin: 0 auto;
 }
 .main-section-card {
-    background-color: var(--glass-bg-medium);
+    background-color: rgba(255, 255, 255, 0.08);
     /* خلفية بيضاء شفافة لتأثير الزجاج */
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(3px);
     /* تطبيق تأثير الضباب (الزجاج الشفاف) */
-    -webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(3px);
     /* لدعم متصفح سفاري */
     border-radius: 20px;
     /* حواف دائرية للبطاقة */
@@ -206,7 +227,7 @@ main{
     /* مسافة داخلية للمحتوى داخل البطاقة */
     margin-bottom: 40px;
     /* مسافة بين كل بطاقة والتي تليها */
-    box-shadow: 0 8px 25px var(--shadow-light);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     /* ظل خفيف لإضافة عمق */
     border: 1px solid rgba(255, 255, 255, 0.3);
     min-height: calc(100vh - 250px);
@@ -215,25 +236,42 @@ main{
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 3px solid var(--border-light);
+    /* border: 3px solid var(--border-light); */
 
 }
 .main-section-card h2{
     color: var(--text-medium);
-    font-size: 1.1rem;
+    font-size: 2.5rem;
     line-height: 1.8;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-weight: 800;
 }
 .main-section-card p{
     color: #444;
 }
-h1,h2{
+h1 {
+    font-size: 3.2rem; /* كبرت الحجم أكتر، كان 2rem مثلاً */
+    font-weight: 800; /* خليته أثقل بكثير، كان 700 */
+    margin-bottom: 25px; /* زودت المسافة تحت العنوان */
+    color: var(--text-dark); /* التأكد من اللون المناسب */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* ظل أوضح عشان يبرز */
+}
+
+h2 {
+    font-size: 2.5rem; /* كبرت الحجم أكتر، كان 2.2rem */
+    font-weight: 800; /* خليته أثقل، كان 700 */
+    margin-bottom: 25px; /* زودت المسافة تحت العنوان */
+    color: var(--text-dark); /* التأكد من اللون المناسب */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15); /* ظل أوضح */
+    
+}
+/* h1,h2{
     margin-bottom: 20px;
     font-weight: 700;
     color: var(--text-dark);
-}
+} */
 p{
-    line-height: 1.7;
+    line-height: 2;
     margin-bottom: 16px;
     color: var(--text-medium);
 } 
@@ -266,6 +304,57 @@ p{
     transform: translateY(0);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     background-color: #bf4d00;
+}
+.contact-links{
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 20px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+.contact-links li{
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    display: block !important;
+    text-align: center !important;
+    /* display: flex; */
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+.contact-links li a{
+    text-decoration: none !important;
+    color: var(--text-dark) !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    transition: color 0.3s esae , background-color 0.3s esae , transform 0.3s ease !important;
+    padding: 8px 15px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    /* display: flex; */
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 180px !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    /* display: inline-block; */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+.contact-list li a i,
+.contact-list li a span.icon { /* لو الأيقونات في span بكلاس icon */
+    font-size: 1.3rem !important; /* حجم الأيقونة أكبر قليلاً */
+    margin-right: 8px !important; /* مسافة بين الأيقونة والنص */
+    color: inherit !important; /* لون الأيقونة */
+    vertical-align: middle !important;
+}
+.contact-list li a:hover {
+    color: var(--accent-color) !important; /* لون مميز عند الهوفر */
+    background-color: rgba(0, 0, 0, 0.05) !important; /* لون خلفية عند الهوفر */
+    transform: translateY(-2px) !important; /* حركة خفيفة عند الهوفر */
 }
 footer {
     bottom: 0;
@@ -314,5 +403,83 @@ footer {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+.main-section-card{
+    max-width: 900px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 40px;
+}
+/* 768< */
+@media(max-width:768px){
+    .main-section-card {
+            padding: 30px;
+            /* نقلل الـ padding الداخلي شوية */
+            margin: 30px auto;
+            /* نقلل المسافة العلوية والسفلية */
+            width: 90%;
+            /* ممكن نخليها 90% عشان ما تلزقش في الأطراف */
+        }
+    h1{
+        font-size: 2.5rem;
+    } 
+    h2{
+        font-size: 2.2rem;
+    }   
+    p{
+        font-size: 1rem;
+    }
+    .btn{
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    #header {
+        flex-direction: column; /* نخلي العناصر تحت بعض */
+        padding: 15px 20px;
+        gap: 15px; /* مسافة بين اللوجو والقائمة */
+    }
+
+    .nav-menu ul {
+        flex-wrap: wrap; /* تخلي العناصر تنزل لسطر جديد لو المساحة ضاقت */
+        justify-content: center; /* توسيط عناصر القائمة */
+        gap: 15px; /* نقلل المسافة بينها */
+    }
+
+    .nav-menu ul li a {
+        padding: 8px 12px; /* نصغر حجم أزرار التنقل */
+        font-size: 0.9rem;
+    }
+}
+}
+/* 480> */
+@media (max-width: 480px) {
+    .main-section-card {
+        padding: 20px; /* نقلل الـ padding أكتر */
+        margin: 20px auto;
+        width: 95%; /* نخليها 95% عشان تستغل المساحة كويس */
+    }
+
+    h1 {
+        font-size: 2rem; /* نصغر H1 أكتر */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* نصغر H2 أكتر */
+    }
+
+    .contact-list li a {
+        min-width: unset; /* نشيل الـ min-width عشان ياخد العرض اللي يكفيه فقط */
+        width: auto; /* او ممكن تخليها auto لو مش عايزة عرض ثابت */
+        padding: 10px 15px; /* نعدل الـ padding للينك */
+        font-size: 1rem; /* نصغر حجم الخط للروابط */
+    }
+    .nav-menu ul {
+        flex-direction: column; /* تخلي كل عنصر في سطر لوحده */
+        gap: 10px;
+    }
+    .nav-menu ul li {
+        width: 100%; /* عشان ياخد العرض الكامل ويبقى كل واحد لوحده */
+        text-align: center;
     }
 }

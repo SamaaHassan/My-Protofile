@@ -263,3 +263,52 @@ footer {
         background-position: 0% 50%;
     }
 }
+
+/*  */
+.contact-links{
+     list-style: none; /* إزالة النقاط */
+    padding: 0;      /* إزالة المسافة البادئة الافتراضية */
+    margin: 20px 0;  /* مسافة علوية وسفلية */
+    display: flex;   /* جعل القائمة نفسها flex container */
+    flex-direction: column; /* ترتيب العناصر تحت بعضها البعض */
+    align-items: center; /* توسيط كل عنصر (الـ li) أفقياً */
+    gap: 15px;
+}
+.contact-links li{
+    margin: 0; /* إزالة هوامش الـ li الافتراضية */
+    padding: 0; /* إزالة padding الـ li الافتراضي */
+    width: auto; /* يجعل الـ li يأخذ العرض الذي يحتاجه فقط */
+    text-align: center; /* **مهم جداً:** هذا يوسط المحتوى داخل الـ li (أي الرابط بالكامل) */
+
+}
+.contact-links li a{
+    text-decoration: none; /* إزالة الخط السفلي */
+    color: var(--text-dark); /* لون النص */
+    font-size: 1.15rem; /* حجم الخط */
+    font-weight: 600; /* سمك الخط */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* تأثيرات الهوفر */
+    padding: 8px 15px; /* مسافة داخلية للينك */
+    border-radius: 8px; /* حواف دائرية */
+    
+    /* الخصائص الحاسمة هنا: */
+    display: inline-block; /* يجعل الرابط يتصرف كـ block (يقبل padding/width) ولكنه يظل في سياق النص */
+    /* بما أن الأيقونة والنص ملاصقان لبعض في HTML، سيعتبران كتلة واحدة هنا */
+    
+    /* إزالة أي خصائص flex/grid كانت هنا سابقاً إذا كانت موجودة */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* gap: 8px; */
+    /* min-width: 180px; /* هذا كان يفرض عرضاً، قد لا يكون مرغوباً إذا أردتِ عرضاً مرناً */
+}
+.contact-list li a i,
+.contact-list li a span.icon { /* لو الأيقونات في span بكلاس icon */
+    font-size: 1.3rem; /* حجم الأيقونة */
+    /* margin-right: 8px; /* يمكنك إضافة هذه الخاصية هنا إذا أردتِ مسافة ثابتة بين الأيقونة والنص */
+    vertical-align: middle; /* **مهم جداً:** لمحاذاة الأيقونة رأسياً مع النص الذي بجوارها */
+    color: inherit; /* تجعل الأيقونة تأخذ لون الرابط (يتغير مع الهوفر) */
+}
+.contact-list li a:hover {
+    color: var(--accent-color);
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
