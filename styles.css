@@ -289,6 +289,7 @@ body::-webkit-scrollbar{
 }
 main{
     margin-top: 80px;
+    flex-grow:1 ;
 }
 #main{
     scroll-margin-top: 120px ;
@@ -300,19 +301,21 @@ main{
     margin: 0 auto;
 }
 .main-section-card {
-    background-color: rgba(255, 255, 255, 0.08);
+    /* background-color: rgba(255, 255, 255, 0.08); */
     /* خلفية بيضاء شفافة لتأثير الزجاج */
+    background-color: var(--secondary-bg-color);
     backdrop-filter: blur(3px);
     /* تطبيق تأثير الضباب (الزجاج الشفاف) */
     -webkit-backdrop-filter: blur(3px);
     /* لدعم متصفح سفاري */
     border-radius: 20px;
     /* حواف دائرية للبطاقة */
-    padding: 40px;
+    padding: 2rem;
     /* مسافة داخلية للمحتوى داخل البطاقة */
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
     /* مسافة بين كل بطاقة والتي تليها */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* ظل خفيف لإضافة عمق */
     border: 1px solid rgba(255, 255, 255, 0.3);
     min-height: calc(100vh - 250px);
@@ -533,9 +536,14 @@ footer {
 }
 @media (max-width: 768px) {
   .main-section-card {
-    padding: 30px;
+    /* padding: 30px; */
+    padding: 1.5rem;
     margin: 30px auto;
     width: 90%;
+  }
+
+  .projects-grid-container{
+    grid-template-columns: 1fr;
   }
 
   h1 {
@@ -597,13 +605,14 @@ footer {
 }
 @media (max-width: 480px) {
   .main-section-card {
-    padding: 20px;
+    /* padding: 20px; */
+    padding: 1rem;
     margin: 20px auto;
     width: 95%;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   h2 {
@@ -687,6 +696,9 @@ footer {
 }
 .hamburger-menu {
     font-size: 1.8rem; /* تصغير أيقونة الهمبرغر قليلاً */
+}
+section{
+  margin-bottom: 2rem;
 }
 }
 @media (max-width: 360px) {
